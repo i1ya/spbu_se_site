@@ -1690,6 +1690,15 @@ a {
       transition: none; } }
 
 @media (max-width: 991.98px) {
+    .navbar-expand-lg .navbar-collapse-overlay.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.2s ease-in-out; } }
+    @media (max-width: 991.98px) and (prefers-reduced-motion: reduce) {
+      .navbar-expand-lg .navbar-collapse-overlay.show {
+        transition: none; } }
+
+@media (max-width: 991.98px) {
     .navbar-expand-lg .navbar-collapse-overlay .nav-item {
       padding: 0 1.5rem; } }
 
