@@ -50,11 +50,11 @@ jobs:
           run: |
             python src/flask_se.py build
 
-       # Commit docs to gh-pages
-       - name: Push /docs/ to gh-pages
-         uses: Automattic/action-commit-to-branch@master
-         with:
-           branch: 'gh-pages'
-           commit_message: 'Update gh-pages /docs/'
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
+        # Commit docs to gh-pages
+        - name: Push to gh-pages
+          uses: Automattic/action-commit-to-branch@master
+          with:
+            branch: 'gh-pages'
+            commit_message: 'Update gh-pages /docs/'
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
