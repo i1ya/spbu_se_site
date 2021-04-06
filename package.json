@@ -1,0 +1,29 @@
+{
+  "name": "spbu_se_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.5",
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i1ya/spbu_se_site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i1ya/spbu_se_site/issues"
+  },
+  "homepage": "https://github.com/i1ya/spbu_se_site#readme"
+}
