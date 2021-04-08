@@ -280,7 +280,8 @@ small,
   margin-right: -15px;
   margin-left: -15px; }
 
- .col-4, .col-12, .col, .col-sm-3, .col-sm-4, .col-md-3, .col-md-9, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-4 {
+ .col-4, .col-12, .col,
+.col-auto, .col-sm-3, .col-sm-4, .col-md-3, .col-md-9, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-4 {
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -289,6 +290,11 @@ small,
 .col {
   flex-basis: 0;
   flex-grow: 1;
+  max-width: 100%; }
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
   max-width: 100%; }
 
 .col-4 {
@@ -1180,7 +1186,7 @@ button.bg-dark:focus {
 .my-auto {
   margin-bottom: auto !important; }
 
-
+.ml-auto,
 .mx-auto {
   margin-left: auto !important; }
 
@@ -1279,6 +1285,18 @@ button.bg-dark:focus {
 a.text-primary:hover, a.text-primary:focus {
   color: #0061b3 !important; }
 
+.text-success {
+  color: #5cc9a7 !important; }
+
+a.text-success:hover, a.text-success:focus {
+  color: #36a381 !important; }
+
+.text-info {
+  color: #50b5ff !important; }
+
+a.text-info:hover, a.text-info:focus {
+  color: #0495ff !important; }
+
 .text-warning {
   color: #FFBE3D !important; }
 
@@ -1305,6 +1323,9 @@ a.text-white:hover, a.text-white:focus {
 
 .text-muted {
   color: #718096 !important; }
+
+.text-reset {
+  color: inherit !important; }
 
 @media print {
   *,
@@ -1365,6 +1386,12 @@ a.text-white:hover, a.text-white:focus {
     opacity: 0;
     transform: translateY(300px); } }
 
+.bg-soft-primary {
+  background-color: #e0f1ff; }
+
+.bg-soft-success {
+  background-color: #ebf9f4; }
+
 .bg-dark-info {
   background-color: #1d9fff !important; }
 
@@ -1372,6 +1399,12 @@ a.bg-dark-info:hover, a.bg-dark-info:focus,
 button.bg-dark-info:hover,
 button.bg-dark-info:focus {
   background-color: #0086e9 !important; }
+
+.bg-soft-info {
+  background-color: #eaf6ff; }
+
+.bg-soft-warning {
+  background-color: #fff7e8; }
 
 .bg-light-dark {
   background-color: #241e6f !important; }
