@@ -823,6 +823,16 @@ small,
     outline: 0;
     box-shadow: 0 0 0 0 rgba(92, 201, 167, 0.5); }
 
+.badge-info {
+  color: #FFF;
+  background-color: #50b5ff; }
+  a.badge-info:hover, a.badge-info:focus {
+    color: #FFF;
+    background-color: #1d9fff; }
+  a.badge-info:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(80, 181, 255, 0.5); }
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -1291,12 +1301,6 @@ a.text-primary:hover, a.text-primary:focus {
 a.text-success:hover, a.text-success:focus {
   color: #36a381 !important; }
 
-.text-info {
-  color: #50b5ff !important; }
-
-a.text-info:hover, a.text-info:focus {
-  color: #0495ff !important; }
-
 .text-warning {
   color: #FFBE3D !important; }
 
@@ -1399,9 +1403,6 @@ a.bg-dark-info:hover, a.bg-dark-info:focus,
 button.bg-dark-info:hover,
 button.bg-dark-info:focus {
   background-color: #0086e9 !important; }
-
-.bg-soft-info {
-  background-color: #eaf6ff; }
 
 .bg-soft-warning {
   background-color: #fff7e8; }

@@ -314,7 +314,7 @@ a.onreadystatechange = function() {
     <section class="slice clients delimiter-top delimiter-bottom bg-section-secondary" id="theses">
         <div class="container">
             <div class="row row-grid">
-                <div class="col-lg-9">
+                <div class="col-lg-9" id="ThesisList">
                     
                     <div class="card border-0">
                         <div class="card-header">
@@ -358,7 +358,24 @@ a.onreadystatechange = function() {
                         <div class="card-body pt-2">
                             <p class="text-sm mb-0">Автор: <i>Аникин Егор Георгиевич</i></p>
                             <p class="text-sm mb-0">Руководитель: <i>Терехов Андрей Николаевич</i></p>
-                            <p class="text-sm mb-0">Направление: <i>Математическое обеспечение и администрирование информационных систем</i></p>
+                            <p class="text-sm">Направление: <i>Математическое обеспечение и администрирование информационных систем</i></p>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                Компилятор
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                Android
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                F#
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                РуСи
+                            </a>
+                            
                         </div>
                     </div>
                     
@@ -399,7 +416,7 @@ a.onreadystatechange = function() {
                                     
                                     
                                     <a href="https://github.com/DedSec256/fsharp" target="_blank" class="text-reset">
-                                        <div class="icon icon-sm icon-shape bg-soft-info text-info" data-content="Реализация" data-placement="top" data-trigger="hover" data-toggle="popoverhover">
+                                        <div class="icon icon-sm icon-shape bg-soft-success text-success" data-content="Реализация" data-placement="top" data-trigger="hover" data-toggle="popoverhover">
                                             <i class="fas fa-file-archive"></i>
                                         </div>
                                     </a>
@@ -410,7 +427,24 @@ a.onreadystatechange = function() {
                         <div class="card-body pt-2">
                             <p class="text-sm mb-0">Автор: <i>Бережных Алексей Владимирович</i></p>
                             <p class="text-sm mb-0">Руководитель: <i>Кознов Дмитрий Владимирович</i></p>
-                            <p class="text-sm mb-0">Направление: <i>Математическое обеспечение и администрирование информационных систем</i></p>
+                            <p class="text-sm">Направление: <i>Математическое обеспечение и администрирование информационных систем</i></p>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                Компилятор
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                Android
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                F#
+                            </a>
+                            
+                            <a href="#" class="badge badge-info mr-2">
+                                РуСи
+                            </a>
+                            
                         </div>
                     </div>
                     
@@ -426,12 +460,8 @@ a.onreadystatechange = function() {
                                     Тип работы
                                 </p>
                                 <div class="form-group">
-                                    <select class="custom-select pl-3">
-                                        <option selected value="0">Все работы</option>
-                                        <option value="1">Курсовые</option>
-                                        <option value="2">Бакалаврские ВКР</option>
-                                        <option value="3">Магистерские ВКР</option>
-                                    </select>
+                                    <input id="csrf_token" name="csrf_token" type="hidden" value="IjE5ZjljZjNmYWI2Njc4YTkxZWVkNzYwNzZjZDc0NDQzOTQ0ZDk4ZTci.YHChQA.hjoDeGhGytBoxXGQMvyzW6y_HbM">
+                                    <select class="custom-select pl-3" id="worktype" name="worktype"><option value="1">Все работы</option><option value="2">Курсовая работа</option><option value="3">Бакалаврская ВКР</option><option value="4">Магистерская ВКР</option></select>
                                 </div>
                             </div>
                         </div>
@@ -440,6 +470,31 @@ a.onreadystatechange = function() {
             </div>
         </div>
      </section>
+
+    <script>
+    let theses_list = document.getElementById('ThesisList');
+    let wt_select = document.getElementById('worktype');
+
+    function update() {
+
+        let params = new URLSearchParams();
+        let wt = wt_select.value;
+        if (wt > 1)
+        {
+            params.append('worktype', wt);
+        }
+        console.log(wt);
+        console.log('fetch_theses?' + params.toString());
+
+        fetch('fetch_theses?' + params.toString()).then(function(response){
+            response.text().then(function (text) {
+                theses_list.innerHTML = text;
+            });
+        });
+    }
+
+    wt_select.onchange = update;
+    </script>
 
 
 
