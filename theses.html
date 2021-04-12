@@ -460,7 +460,7 @@ a.onreadystatechange = function() {
                                     Тип работы
                                 </p>
                                 <div class="form-group">
-                                    <input id="csrf_token" name="csrf_token" type="hidden" value="IjQyZmFhMDhiZmVjZTExZjNhNjY2MWI5OTNmMzVjZWM1ZjUzZjUzODYi.YHPy2Q.x0WOavJUp9ha1xMv3frGLgQh77Y">
+                                    <input id="csrf_token" name="csrf_token" type="hidden" value="ImViYzZkNTYzZjczNzI3OTA3MDJhMDQ0YWFhMmNjNTlkNzZmMjMyOTgi.YHQfBA.-ZhyEj165nClvWR3Vrc_G3jNzGM">
                                     <select class="custom-select pl-3" id="worktype" name="worktype"><option value="1">Все работы</option><option value="2">Курсовая работа</option><option value="3">Бакалаврская ВКР</option><option value="4">Магистерская ВКР</option></select>
                                 </div>
                             </div>
@@ -470,32 +470,6 @@ a.onreadystatechange = function() {
             </div>
         </div>
      </section>
-
-    <script>
-    let theses_list = document.getElementById('ThesisList');
-    let wt_select = document.getElementById('worktype');
-
-    function update() {
-
-        let params = new URLSearchParams();
-        let wt = wt_select.value;
-        if (wt > 1)
-        {
-            params.append('worktype', wt);
-        }
-        console.log(wt);
-        console.log('fetch_theses?' + params.toString());
-
-        fetch('fetch_theses?' + params.toString()).then(function(response){
-            response.text().then(function (text) {
-                theses_list.innerHTML = text;
-            });
-        });
-    }
-
-    wt_select.onchange = update;
-    </script>
-
 
 
     <footer class="position-relative" id="footer-main">
@@ -592,6 +566,7 @@ a.onreadystatechange = function() {
     <!-- script src='https://www.google.com/recaptcha/api.js' async defer></script -->
     <!-- Quick JS -->
     <script src="assets/js/quick-website.js"></script>
+    <script src="assets/js/se_scripts.js"></script>
     <!-- Feather Icons -->
     <script>
         feather.replace({
