@@ -1026,10 +1026,15 @@ button.bg-dark:focus {
 .mt-0 {
   margin-top: 0 !important; }
 
+
+.mx-0 {
+  margin-right: 0 !important; }
+
 .mb-0 {
   margin-bottom: 0 !important; }
 
-.ml-0 {
+.ml-0,
+.mx-0 {
   margin-left: 0 !important; }
 
 .mb-1 {
