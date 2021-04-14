@@ -70,6 +70,9 @@ body {
   text-align: left;
   background-color: #1F2D3D; }
 
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important; }
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -421,9 +424,9 @@ small,
     box-shadow: none; }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer; }
-    .btn:not(:disabled):not(.disabled):active {
+    .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
       box-shadow: inset 0 1px 0 rgba(31, 45, 61, 0.15); }
-      .btn:not(:disabled):not(.disabled):active:focus {
+      .btn:not(:disabled):not(.disabled):active:focus, .btn:not(:disabled):not(.disabled).active:focus {
         box-shadow: 0 0 0 rgba(0, 89, 242, 0.25), inset 0 1px 0 rgba(31, 45, 61, 0.15); }
 
 .btn-primary {
@@ -441,11 +444,11 @@ small,
     color: #fff;
     background-color: #0C66FF;
     border-color: #0C66FF; }
-  .btn-primary:not(:disabled):not(.disabled):active {
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #0050d8;
     border-color: #004bcb; }
-    .btn-primary:not(:disabled):not(.disabled):active:focus {
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus {
       box-shadow: inset 0 1px 0 rgba(31, 45, 61, 0.15), 0 0 0 rgba(12, 102, 255, 0.35); }
 
 .btn-secondary {
@@ -463,11 +466,11 @@ small,
     color: #fff;
     background-color: #8492A6;
     border-color: #8492A6; }
-  .btn-secondary:not(:disabled):not(.disabled):active {
+  .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #68788f;
     border-color: #627288; }
-    .btn-secondary:not(:disabled):not(.disabled):active:focus {
+    .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus {
       box-shadow: inset 0 1px 0 rgba(31, 45, 61, 0.15), 0 0 0 rgba(132, 146, 166, 0.35); }
 
 .btn-warning {
@@ -485,11 +488,11 @@ small,
     color: #fff;
     background-color: #FFBE3D;
     border-color: #FFBE3D; }
-  .btn-warning:not(:disabled):not(.disabled):active {
+  .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #ffad0a;
     border-color: #fca800; }
-    .btn-warning:not(:disabled):not(.disabled):active:focus {
+    .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus {
       box-shadow: inset 0 1px 0 rgba(31, 45, 61, 0.15), 0 0 0 rgba(255, 190, 61, 0.35); }
 
 .btn-outline-primary {
@@ -504,11 +507,11 @@ small,
    .btn-outline-primary:disabled {
     color: #0C66FF;
     background-color: transparent; }
-  .btn-outline-primary:not(:disabled):not(.disabled):active {
+  .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #0C66FF;
     border-color: #0C66FF; }
-    .btn-outline-primary:not(:disabled):not(.disabled):active:focus {
+    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus {
       box-shadow: inset 0 1px 0 rgba(31, 45, 61, 0.15), 0 0 0 rgba(12, 102, 255, 0.35); }
 
 .btn-lg {
@@ -688,7 +691,9 @@ small,
     color: rgba(12, 102, 255, 0.9); }
 
 .navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .nav-link.show {
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
   color: rgba(12, 102, 255, 0.9); }
 
 .navbar-light .navbar-toggler {
@@ -704,7 +709,9 @@ small,
     color: #fff; }
 
 .navbar-dark .navbar-nav .show > .nav-link,
-.navbar-dark .navbar-nav .nav-link.show {
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
   color: #fff; }
 
 .navbar-dark .navbar-toggler {
@@ -789,6 +796,47 @@ small,
       margin-right: 15px;
       margin-bottom: 0;
       margin-left: 15px; } }
+
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.375rem; }
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #E5E9F2;
+  background-color: #273444;
+  border: 1px solid #273444; }
+  .page-link:hover {
+    z-index: 2;
+    color: #EFF2F7;
+    text-decoration: none;
+    background-color: #3C4858;
+    border-color: #3C4858; }
+  .page-link:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 rgba(0, 89, 242, 0.25); }
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem; }
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem; }
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #0059f2;
+  border-color: #0059f2; }
 
 .badge {
   display: inline-block;
@@ -898,8 +946,16 @@ small,
     color: #C0CCDA;
     pointer-events: none;
     background-color: transparent; }
+  .list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #0059f2;
+    border-color: #0059f2; }
   .list-group-item + .list-group-item {
     border-top-width: 0; }
+    .list-group-item + .list-group-item.active {
+      margin-top: -1px;
+      border-top-width: 1px; }
 
 .list-group-flush {
   border-radius: 0; }
@@ -1949,6 +2005,9 @@ svg {
   font-size: 0.875rem; }
   .nav-link:hover {
     color: #273444; }
+  .nav-link.active {
+    color: #273444;
+    font-weight: 600; }
 
 .navbar {
   position: relative;
@@ -2083,6 +2142,17 @@ svg {
   100% {
     opacity: 1;
     transform: translateX(0); } }
+
+.pagination {
+  margin-bottom: 0; }
+
+.page-item .page-link,
+.page-item > span {
+  margin: 0 3px;
+  border-radius: 0.2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(31, 45, 61, 0.08); }
 
 .table thead th {
   padding-top: 0.75rem;
