@@ -147,8 +147,7 @@ button:focus:not(:focus-visible) {
   outline: 0; }
 
 
-button,
-select {
+button {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
@@ -157,15 +156,11 @@ select {
 button {
   overflow: visible; }
 
-button,
-select {
+button {
   text-transform: none; }
 
 [role="button"] {
   cursor: pointer; }
-
-select {
-  word-wrap: normal; }
 
 button,
 [type="button"] {
@@ -281,7 +276,7 @@ small,
   margin-left: -15px; }
 
  .col-4, .col-12, .col,
-.col-auto, .col-sm-3, .col-sm-4, .col-md-3, .col-md-9, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-4 {
+.col-auto, .col-sm-3, .col-sm-4, .col-md-3, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-4 {
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -316,10 +311,7 @@ small,
 @media (min-width: 768px) {
   .col-md-3 {
     flex: 0 0 25%;
-    max-width: 25%; }
-  .col-md-9 {
-    flex: 0 0 75%;
-    max-width: 75%; } }
+    max-width: 25%; } }
 
 @media (min-width: 992px) {
   .col-lg {
@@ -971,9 +963,6 @@ button.bg-dark:focus {
 .d-flex {
   display: flex !important; }
 
-.justify-content-end {
-  justify-content: flex-end !important; }
-
 .justify-content-center {
   justify-content: center !important; }
 
@@ -982,9 +971,6 @@ button.bg-dark:focus {
 
 .justify-content-around {
   justify-content: space-around !important; }
-
-.align-items-end {
-  align-items: flex-end !important; }
 
 .align-items-center {
   align-items: center !important; }
